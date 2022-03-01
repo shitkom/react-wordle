@@ -198,7 +198,7 @@ function App() {
   return (
     <div className="h-screen pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
       <h1 className="text-5xl text-gray-500 dark:text-gray-300 w-full flex justify-center my-20">
-        Er stensrud dum???
+        Hemmelig hem
       </h1>
       <div className="pb-6 grow">
         <Grid
