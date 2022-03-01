@@ -40,10 +40,6 @@ export const InfoModal = ({ isOpen, handleClose, gameWon }: Props) => {
         Guess the word in 6 tries. After each guess, the color of the tiles will
         change to show how close your guess was to the word.
       </p>
-
-      <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter W is in the word and in the correct spot.
-      </p>
     </BaseModal>
   )
 }
