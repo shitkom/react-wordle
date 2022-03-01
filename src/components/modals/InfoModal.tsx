@@ -26,7 +26,7 @@ export const InfoModal = ({ isOpen, handleClose, gameWon }: Props) => {
           fremheve disse endringene så endrer vi også navn til 'Backlog'
         </p>
         <a
-          href="https://docs.google.com/forms/d/1Tkbrq1y5eueL4fNwaiN4uRKqnChOD2QTEv0ev0nIUzY/edit"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSd_KNs1YSb_nAVNaiNzpaygziSd2UOCSdGAJotwjzcKA9vTow/viewform?usp=sf_link"
           className="text-gray-300 dark:text-gray-700 bg-bgblue dark:bg-gray-300 rounded px-4 py-2 font-bold"
         >
           Søk backlog!
