@@ -9,7 +9,7 @@ export const getStatuses = (
   const splitSolution = unicodeSplit(solution)
 
   guesses.forEach((word) => {
-    unicodeSplit(word).forEach((letter, i) => {
+    unicodeSplit(word.toLowerCase()).forEach((letter, i) => {
       if (!splitSolution.includes(letter)) {
         // make status absent
         return (charObj[letter] = 'absent')
@@ -32,7 +32,7 @@ export const getStatuses = (
 
 export const getGuessStatuses = (guess: string): CharStatus[] => {
   const splitSolution = unicodeSplit(solution)
-  const splitGuess = unicodeSplit(guess)
+  const splitGuess = unicodeSplit(guess.toLowerCase())
 
   const solutionCharsTaken = splitSolution.map((_) => false)
 

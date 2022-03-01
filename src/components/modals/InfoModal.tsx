@@ -1,12 +1,39 @@
-import { Cell } from '../grid/Cell'
 import { BaseModal } from './BaseModal'
 
 type Props = {
   isOpen: boolean
+  gameWon: boolean
   handleClose: () => void
 }
 
-export const InfoModal = ({ isOpen, handleClose }: Props) => {
+export const InfoModal = ({ isOpen, handleClose, gameWon }: Props) => {
+  if (gameWon)
+    return (
+      <BaseModal
+        title="Seniorkom endrer navn til BACKLOG!"
+        isOpen={isOpen}
+        handleClose={handleClose}
+      >
+        <p className="my-2 text-sm text-gray-500 dark:text-gray-500">
+          <span className="font-bold">Backlog:</span> A large stick of wood,
+          forming the of a fire on the hearth.[U.S.]There was first a backlog,
+          from fifteen to four and twenty inches indiameter and five feet long,
+          imbedded in the ashes. S. G. Goodrich.
+        </p>
+
+        <p className="mb-5 text-gray-500 dark:text-gray-300">
+          Komiteen har endret struktur og fått ny interne retningslinjer. For å
+          fremheve disse endringene så endrer vi også navn til 'Backlog'
+        </p>
+        <a
+          href="https://docs.google.com/forms/d/1Tkbrq1y5eueL4fNwaiN4uRKqnChOD2QTEv0ev0nIUzY/edit"
+          className="text-gray-300 dark:text-gray-700 bg-bgblue dark:bg-gray-300 rounded px-4 py-2 font-bold"
+        >
+          Søk backlog!
+        </a>
+      </BaseModal>
+    )
+
   return (
     <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
@@ -14,58 +41,8 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         change to show how close your guess was to the word.
       </p>
 
-      <div className="flex justify-center mb-1 mt-4">
-        <Cell
-          isRevealing={true}
-          isCompleted={true}
-          value="W"
-          status="correct"
-        />
-        <Cell value="E" />
-        <Cell value="A" />
-        <Cell value="R" />
-        <Cell value="Y" />
-      </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
         The letter W is in the word and in the correct spot.
-      </p>
-
-      <div className="flex justify-center mb-1 mt-4">
-        <Cell value="P" />
-        <Cell value="I" />
-        <Cell
-          isRevealing={true}
-          isCompleted={true}
-          value="L"
-          status="present"
-        />
-        <Cell value="O" />
-        <Cell value="T" />
-      </div>
-      <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter L is in the word but in the wrong spot.
-      </p>
-
-      <div className="flex justify-center mb-1 mt-4">
-        <Cell value="V" />
-        <Cell value="A" />
-        <Cell value="G" />
-        <Cell isRevealing={true} isCompleted={true} value="U" status="absent" />
-        <Cell value="E" />
-      </div>
-      <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter U is not in the word in any spot.
-      </p>
-
-      <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        This is an open source version of the word guessing game we all know and
-        love -{' '}
-        <a
-          href="https://github.com/cwackerfuss/react-wordle"
-          className="underline font-bold"
-        >
-          check out the code here
-        </a>{' '}
       </p>
     </BaseModal>
   )
