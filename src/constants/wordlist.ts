@@ -1,4 +1,5 @@
 export const WORDS = [
+  'genfors',
   'abalone',
   'abandon',
   'abdomen',
